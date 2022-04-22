@@ -16,63 +16,63 @@
 </head>
 
 <body>
-    <div id="echart"></div>
-    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.js"></script>
-    <script>
-        /**
-         * 一，先初始化echarts对象
-         * 二，设置配置项
-         * 三，设置轴参数
-         * 四，系列中配置数据
-         */
-        const echartDom = document.getElementById('echart')
-        let echart = echarts.init(echartDom)
+<div id="echart"></div>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.js"></script>
+<script>
+    /**
+     * 一，先初始化echarts对象
+     * 二，设置配置项
+     * 三，设置轴参数
+     * 四，系列中配置数据
+     */
+    const echartDom = document.getElementById('echart')
+    let echart = echarts.init(echartDom)
 
-        echart.setOption({
-            title: {
-                text: '水果',
+    echart.setOption({
+        title: {
+            text: '水果',
+        },
+        xAxis: {
+            // 将x轴设为value（数值轴），将类目放到y轴，即可改变柱状图的方向
+            type: 'value'
+        },
+        yAxis: {
+            // 将x轴设为value（数值轴），将类目放到y轴，即可改变柱状图的方向
+            data: ['苹果', '西瓜', '香蕉', '橘子'],
+        },
+        series: {
+            type: 'bar', // 图表类型，bar为柱状图
+            name: 'FruitData', // series 的名称
+            data: [500, 600, 580, 150], // 映射到图表的数据
+            markPoint: { // 标记点。可以设置最大值、最小值等
+                data: [{
+                    type: 'max',
+                    name: '最大值'
+                }, {
+                    type: 'min',
+                    name: '最小值'
+                }]
             },
-            xAxis: {
-                 // 将x轴设为value（数值轴），将类目放到y轴，即可改变柱状图的方向
-                type: 'value'
+            markLine: { // 标线。可以设置平均值等
+                data: [{
+                    type: 'average',
+                    name: '平均值'
+                }]
             },
-            yAxis: {
-                // 将x轴设为value（数值轴），将类目放到y轴，即可改变柱状图的方向
-                data: ['苹果', '西瓜', '香蕉', '橘子'], 
-            },
-            series: {
-                type: 'bar', // 图表类型，bar为柱状图
-                name: 'FruitData', // series 的名称
-                data: [500, 600, 580, 150], // 映射到图表的数据
-                markPoint: { // 标记点。可以设置最大值、最小值等
-                    data: [{
-                        type: 'max',
-                        name: '最大值'
-                    }, {
-                        type: 'min',
-                        name: '最小值'
-                    }]
-                },
-                markLine: { // 标线。可以设置平均值等
-                    data: [{
-                        type: 'average',
-                        name: '平均值'
-                    }]
-                },
-                barWidth: 20, // 设置图表类目轴的宽度
-                // color: 'red', // 设置图表的整体颜色
-                itemStyle: { // 设置每项的样式
-                    normal: { // 正常情况下
-                        color(params) { // 每项的颜色
-                            let colors = ['#c23531', '#2f4554', '#61a0a8', '#91c7ae']
-                            return colors[params.dataIndex]
-                        }
+            barWidth: 20, // 设置图表类目轴的宽度
+            // color: 'red', // 设置图表的整体颜色
+            itemStyle: { // 设置每项的样式
+                normal: { // 正常情况下
+                    color(params) { // 每项的颜色
+                        let colors = ['#c23531', '#2f4554', '#61a0a8', '#91c7ae']
+                        return colors[params.dataIndex]
                     }
                 }
             }
-        })
+        }
+    })
 
-    </script>
+</script>
 </body>
 
 </html>
