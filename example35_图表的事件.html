@@ -65,8 +65,8 @@
 
     // 传入三个参数。第二个参数可传入一个对象
     echart.on('click', {
-        name: '西瓜', // 事件生效在西瓜这一列
-        seriesIndex: 1, //
+        name: '西瓜', // 事件仅生效在西瓜这一列的图形
+        seriesIndex: 1, // 事件仅生效在series[seriesIndex]系列
     }, params => {
         console.log('该点击事件只生效在序号为西瓜', params)
     })
