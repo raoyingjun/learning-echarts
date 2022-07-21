@@ -53,7 +53,7 @@
              *
              */
             startAngle: 180,
-            splitNumber: 5, // 设置雷达图环数
+            splitNumber: 7, // 设置雷达图环数
             axisName: {
                 formatter: '字母{value}', // 设置雷达图各个角的文本， {value} 为插值，对应 indicator.name 的值
                 color: 'red' // 设置雷达图各个角的文本颜色
@@ -62,7 +62,7 @@
             splitArea: {
                 // 设置分割的区域样式
                 areaStyle: {
-                    // 设置每个环对应的颜色
+                    // 设置每个环对应的颜色，如果雷达图环数 > 色彩颜色的数量，则会循环色彩颜色
                     color: ['red', 'green', 'blue', 'gray', 'yellow']
                 }
             }
