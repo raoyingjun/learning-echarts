@@ -51,7 +51,7 @@
                 color: 'blue'
             },
             // formatter 用于自定义tooltip内容（支持html标签），支持下面两种方式
-            // formatter: '{a}（系列名称），{b}（类目值），{c}（数值）, {d}（无）' // 方式一该示例为饼图
+            // formatter: '{a}（系列名称），{b}（类目值），{c}（数值）, {d}（无）' // 该该示例为柱状图
             formatter(params) {
                 return `名字：${params[0].name}<br>数据：${params[0].data}`
             },
