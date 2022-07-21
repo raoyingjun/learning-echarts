@@ -46,12 +46,12 @@
         dataZoom: [
             {
                 type: 'slider', // slider滑动条型数据区域缩放组件
-                xAxisIndex: 0, // 设置 dataZoom-slider 组件控制的 x 轴
+                xAxisIndex: 0, // 设置 dataZoom-slider 组件控制的 x 轴，在该图例中中指代仅有一个的 xAxis[0]，可以理解成 xAxis: [{}, {}, {}] 中的第 0 项
                 filterMode: 'none' // none不过滤数据，只改变数轴显示范围。
             },
             {
                 type: 'slider',
-                yAxisIndex: 0, // 设置 dataZoom-slider 组件控制的 y 轴
+                yAxisIndex: 0, // 设置 dataZoom-slider 组件控制的 y 轴，在该图例中指代仅有一个的 yAxis 并且还是缺省的 yAxis[0]，可以理解成 yAxis: [{}, {}, {}] 中的第 0 项
                 filterMode: 'none'
             }
         ]
