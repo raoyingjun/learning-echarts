@@ -38,7 +38,7 @@ function renderBarChart() {
                 show: true,
                 color: 'white',
                 position: 'insideRight',// 标签的位置
-                align: 'right' // 文字水平对齐方式
+                align: 'right' // 文本对齐标签的位置（position），这里是文本对齐标签的位置（position）的右端
             },
             itemStyle: {
                 borderRadius: [0, 20, 20, 0],
@@ -192,7 +192,7 @@ function renderLineStackChart() {
         },
         xAxis: {
             data: CATEGORY_DATA,
-            boundaryGap: false, // 是否和边界保持一定的间隙
+            boundaryGap: false, // 是否和图表的边界保持一定的间隙
             axisLine: { // 轴线条设置
                 lineStyle: { // 线条样式
                     color: 'white' // 线条颜色为白色（同时会设置轴上的标签文本颜色）
@@ -214,7 +214,7 @@ function renderLineStackChart() {
             name: '一季度',
             data: LINE_STACK_VALUE_DATA.FIRST_QUARTER,
             lineStyle: {
-                width: 0,
+                width: 0, // 折线图的线的宽度，0即不需要显示线条
             },
             areaStyle: {
                 opacity: .9,
@@ -335,9 +335,6 @@ function renderBarStackChart() {
             trigger: 'axis',
             axisPointer: {
                 type: 'shadow',
-                label: {
-                    backgroundColor: '#6c8bff', // 指示器标签文本的背景色
-                }
             },
         },
         legend: {
